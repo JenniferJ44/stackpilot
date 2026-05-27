@@ -57,3 +57,4 @@ Après déploiement en production :
 5. Inspectez les URLs principales pour demander l'indexation
 
 Le sitemap est généré automatiquement depuis `src/app/sitemap.ts` et inclut toutes les pages statiques, technologies et projets.
+# stackpilot
