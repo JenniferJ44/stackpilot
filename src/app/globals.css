@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f9fd;
+  --foreground: #0f172a;
+  --bp-line: rgba(99, 102, 241, 0.025);
+  --bp-line-major: rgba(99, 102, 241, 0.04);
+  --bp-line-dark: rgba(255, 255, 255, 0.025);
+  --bp-line-dark-major: rgba(255, 255, 255, 0.04);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ── Grid discret (présence optionnelle, quasi invisible) ───────── */
+.bp-grid {
+  background-image:
+    linear-gradient(var(--bp-line-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bp-line-major) 1px, transparent 1px),
+    linear-gradient(var(--bp-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bp-line) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+}
+
+.bp-grid-dark {
+  background-image:
+    linear-gradient(var(--bp-line-dark-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bp-line-dark-major) 1px, transparent 1px),
+    linear-gradient(var(--bp-line-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bp-line-dark) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+}
+
+/* ── Section tag ─────────────────────────────────────────────────── */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(99 102 241);
+  margin-bottom: 0.75rem;
+}
+
+/* ── Hero reveal — cascade d'apparition sur le fold ─────────────── */
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+}
+
+.hero-badge {
+  animation: heroReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+.hero-title {
+  animation: heroReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+.hero-subtitle {
+  animation: heroReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+.hero-cta {
+  animation: heroReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+.hero-trust {
+  animation: heroReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.78s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-badge, .hero-title, .hero-subtitle, .hero-cta, .hero-trust {
+    animation: none;
+  }
+}

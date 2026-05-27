@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StackPilot
 
-## Getting Started
+Site vitrine et outil de diagnostic de stack no-code par **Jennifer Jaulin**, Product Builder No-Code freelance.
 
-First, run the development server:
+## Fonctionnalités
+
+- **Diagnostic de stack** : questionnaire guidé générant une recommandation technologique personnalisée
+- **Pages technologies** : fiches détaillées pour 12+ outils no-code, low-code et IA
+- **Projets** : galerie de réalisations avec galerie lightbox
+- **À propos + Contact** : formulaire de contact avec confirmation email via Resend
+- **SEO** : sitemap automatique, robots.txt, JSON-LD (Person, WebSite, ProfessionalService), generateMetadata par page
+
+## Stack technique
+
+- **Next.js 15** (App Router, SSG)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion**
+- **Resend** (envoi d'emails)
+- Déployé sur **Vercel**
+
+## Variables d'environnement
+
+Copiez `.env.example` vers `.env.local` et remplissez les valeurs :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Variable | Rôle |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | URL publique (sitemap, Open Graph) |
+| `RESEND_API_KEY` | Clé API Resend pour l'envoi d'emails |
+| `CONTACT_EMAIL` | Adresse qui reçoit les messages du formulaire |
+| `CONTACT_FROM_EMAIL` | Expéditeur vérifié dans Resend |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> En développement, `CONTACT_FROM_EMAIL=onboarding@resend.dev` fonctionne sans domaine vérifié.
+> En production, utilisez une adresse d'un domaine vérifié dans Resend.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Lancer le projet
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Ouvrez [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## SEO — Google Search Console
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Après déploiement en production :
 
-## Deploy on Vercel
+1. Connectez-vous à [Google Search Console](https://search.google.com/search-console)
+2. Ajoutez la propriété avec l'URL de production
+3. Vérifiez la propriété (balise HTML ou DNS)
+4. Soumettez le sitemap : `https://votre-domaine.fr/sitemap.xml`
+5. Inspectez les URLs principales pour demander l'indexation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le sitemap est généré automatiquement depuis `src/app/sitemap.ts` et inclut toutes les pages statiques, technologies et projets.
