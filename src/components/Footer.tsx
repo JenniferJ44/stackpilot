@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Layers, ArrowRight, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -19,11 +20,20 @@ export default function Footer() {
 
           {/* Brand col */}
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-2.5 font-bold text-xl mb-4 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-500 flex items-center justify-center shadow-sm">
-                <Layers className="w-4 h-4 text-white" />
+            <Link href="/" className="flex items-center gap-2.5 mb-4 group">
+              <div className="w-11 h-11 rounded-xl overflow-hidden shadow-sm shrink-0">
+                <Image
+                  src="/images/logo_jj.png"
+                  alt="Logo Jennifer Jaulin"
+                  width={44}
+                  height={44}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <span className="text-white">StackPilot</span>
+              <div className="flex flex-col leading-tight">
+                <span className="text-white font-bold text-sm">Jennifer Jaulin</span>
+                <span className="text-slate-400 text-[10px] font-medium">Product Builder No-Code</span>
+              </div>
             </Link>
             <p className="text-sm leading-relaxed max-w-xs mb-2">
               Site de Jennifer Jaulin, Product Builder No-Code freelance.
@@ -64,7 +74,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               {[
                 { href: '/', label: 'Accueil' },
-                { href: '/diagnostic', label: 'Diagnostic de stack' },
+                { href: '/diagnostic', label: 'Diagnostic gratuit' },
                 { href: '/technologies', label: 'Technologies' },
                 { href: '/projets', label: 'Projets' },
                 { href: '/a-propos', label: 'À propos' },
@@ -101,7 +111,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-xs">
-          <p className="text-slate-500">© 2025 StackPilot — Jennifer Jaulin. Tous droits réservés.</p>
+          <p className="text-slate-500">© 2025 Jennifer Jaulin — Product Builder No-Code freelance. Tous droits réservés.</p>
           <p className="max-w-md text-center sm:text-right text-slate-600 leading-relaxed">
             Les prix, fonctionnalités et limites techniques sont indicatifs.
             Vérifiez toujours les conditions actuelles sur les sites officiels des éditeurs.

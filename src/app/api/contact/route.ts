@@ -46,7 +46,7 @@ function buildConfirmationHtml(name: string) {
   return `
     <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; color: #1e293b;">
       <div style="background: linear-gradient(135deg, #4f46e5, #7c3aed); padding: 24px 28px; border-radius: 12px 12px 0 0;">
-        <h2 style="color: white; margin: 0; font-size: 18px; font-weight: 700;">StackPilot — Votre message a bien été reçu</h2>
+        <h2 style="color: white; margin: 0; font-size: 18px; font-weight: 700;">Jennifer Jaulin — Votre message a bien été reçu</h2>
       </div>
       <div style="background: #f8fafc; padding: 28px; border: 1px solid #e2e8f0; border-top: none; border-radius: 0 0 12px 12px;">
         <p style="margin: 0 0 16px; font-size: 15px;">${greeting}</p>
@@ -60,7 +60,7 @@ function buildConfirmationHtml(name: string) {
         </p>
         <div style="border-top: 1px solid #e2e8f0; padding-top: 20px;">
           <p style="margin: 0 0 4px; font-weight: 700; font-size: 14px;">Jennifer Jaulin</p>
-          <p style="margin: 0 0 12px; color: #64748b; font-size: 13px;">Product Builder No-Code · StackPilot</p>
+          <p style="margin: 0 0 12px; color: #64748b; font-size: 13px;">Product Builder No-Code freelance</p>
           <p style="margin: 0 0 4px; font-size: 13px;">
             <a href="https://www.linkedin.com/in/jennifer-jaulin-64b872116/" style="color: #4f46e5; text-decoration: none;">LinkedIn</a>
             &nbsp;·&nbsp;
@@ -125,10 +125,10 @@ export async function POST(req: NextRequest) {
 
     // ── Send notification to me ─────────────────────────────────────────────
     const { error: notifError } = await resend.emails.send({
-      from: `StackPilot Contact <${fromEmail}>`,
+      from: `Jennifer Jaulin <${fromEmail}>`,
       to: [toEmail],
       replyTo: cleanEmail,
-      subject: `Nouveau message depuis StackPilot : ${cleanSubject || '(sans sujet)'} — ${cleanName}`,
+      subject: `Nouveau message depuis jennifer-jaulin.fr : ${cleanSubject || '(sans sujet)'} — ${cleanName}`,
       html: buildNotificationHtml(cleanName, cleanEmail, cleanSubject, cleanMessage, date),
     });
 
@@ -139,9 +139,9 @@ export async function POST(req: NextRequest) {
 
     // ── Send confirmation to visitor ────────────────────────────────────────
     const { error: confirmError } = await resend.emails.send({
-      from: `Jennifer Jaulin · StackPilot <${fromEmail}>`,
+      from: `Jennifer Jaulin <${fromEmail}>`,
       to: [cleanEmail],
-      subject: 'Votre message a bien été reçu – StackPilot',
+      subject: 'Votre message a bien été reçu — Jennifer Jaulin',
       html: buildConfirmationHtml(cleanName),
     });
 

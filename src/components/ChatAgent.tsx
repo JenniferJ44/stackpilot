@@ -474,7 +474,7 @@ export default function ChatAgent() {
           <Layers className="w-4 h-4 text-white" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-white font-semibold text-sm">Diagnostic de stack — StackPilot</p>
+          <p className="text-white font-semibold text-sm">Diagnostic StackPilot</p>
           <p className="text-indigo-200 text-xs">Conseiller en architecture technologique</p>
         </div>
         {history.length > 0 && !thinking && (

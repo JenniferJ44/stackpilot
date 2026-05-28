@@ -8,12 +8,12 @@ import { ArrowRight, Calendar, Layers } from 'lucide-react';
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stackpilot.fr';
 
 export const metadata: Metadata = {
-  title: 'Projets no-code réalisés — StackPilot',
+  title: 'Projets no-code réalisés — Jennifer Jaulin',
   description:
     "Découvrez mes projets no-code réalisés : applications web, automatisations, outils métiers. Bubble, Make, Airtable, Claude Code — de l'idée à l'outil livré.",
   alternates: { canonical: `${BASE_URL}/projets` },
   openGraph: {
-    title: 'Projets no-code réalisés — StackPilot',
+    title: 'Projets no-code réalisés — Jennifer Jaulin',
     description:
       'Découvrez mes projets no-code réalisés : applications web, automatisations, outils métiers.',
     url: `${BASE_URL}/projets`,

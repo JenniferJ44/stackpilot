@@ -1,3 +1,9 @@
+export type GalleryItem = {
+  url: string;
+  title: string;
+  description: string;
+};
+
 export type Project = {
   id: string;
   slug: string;
@@ -14,6 +20,8 @@ export type Project = {
   tags: string[];
   mainImage: string;
   gallery: string[];
+  galleryItems?: GalleryItem[];
+  technicalImage?: string;
   associatedTechnologies: string[];
 };
 
@@ -183,14 +191,30 @@ export const projects: Project[] = [
     role:
       "J'ai conçu et implémenté les scénarios Make de bout en bout : structuration du webhook, mapping des données, configuration des modules Twilio et email, mise en place du Google Sheets de suivi et automatisation des rappels.",
     tags: ['Make', 'Automatisation', 'Webhooks', 'Emailing', 'No-code', 'Twilio', 'Google Sheets'],
-    mainImage: '/projects/webinaire-make/scenario-01.png',
+    mainImage: '/projects/webinaire-make/webinaire-accueil.png',
     gallery: [
-      '/projects/webinaire-make/scenario-01.png',
-      '/projects/webinaire-make/scenario-02.png',
-      '/projects/webinaire-make/scenario-03.png',
-      '/projects/webinaire-make/scenario-04.png',
-      '/projects/webinaire-make/scenario-05.png',
+      '/projects/webinaire-make/workflow-automatise.png',
+      '/projects/webinaire-make/avant-apres.png',
+      '/projects/webinaire-make/architecture-automatisee.png',
     ],
+    galleryItems: [
+      {
+        url: '/projects/webinaire-make/workflow-automatise.png',
+        title: 'Workflow automatisé',
+        description: 'Visualisation du parcours automatisé : inscription, vérification, SMS, email, enregistrement Google Sheets et suivi centralisé.',
+      },
+      {
+        url: '/projects/webinaire-make/avant-apres.png',
+        title: 'Avant / Après automatisation',
+        description: "Comparaison entre un processus manuel avec risques d'erreurs et un parcours automatisé, centralisé et plus fiable.",
+      },
+      {
+        url: '/projects/webinaire-make/architecture-automatisee.png',
+        title: 'Architecture automatisée',
+        description: "Schéma simplifié de l'orchestration entre formulaire, Make, SMS, email, Google Sheets et tableau de suivi.",
+      },
+    ],
+    technicalImage: '/projects/webinaire-make/scenario-01.png',
     associatedTechnologies: ['make'],
   },
 ];

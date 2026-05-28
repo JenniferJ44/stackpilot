@@ -10,18 +10,18 @@ import MotionSection from '@/components/MotionSection';
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stackpilot.fr';
 
 const customTitles: Partial<Record<string, string>> = {
-  bubble: 'Bubble — Créer une application web no-code | StackPilot',
-  airtable: 'Airtable — Base de données no-code | StackPilot',
-  make: 'Make — Expert automatisation no-code | StackPilot',
-  notion: 'Notion — Documentation et wiki no-code | StackPilot',
-  salesforce: 'Salesforce — Administratrice CRM certifiée | StackPilot',
-  sharepoint: 'SharePoint — Gestion documentaire Microsoft | StackPilot',
-  'power-automate': 'Power Automate — Automatisation Microsoft 365 | StackPilot',
-  docusign: 'DocuSign — Signature électronique | StackPilot',
-  'claude-code': 'Claude Code — Développement assisté par IA | StackPilot',
-  glide: 'Glide — Application mobile no-code | StackPilot',
-  monday: 'Monday.com — Gestion de projets no-code | StackPilot',
-  systemeio: 'Systeme.io — Tunnels de vente et marketing no-code | StackPilot',
+  bubble: 'Bubble — Créer une application web no-code | Jennifer Jaulin',
+  airtable: 'Airtable — Base de données no-code | Jennifer Jaulin',
+  make: 'Make — Expert automatisation no-code | Jennifer Jaulin',
+  notion: 'Notion — Documentation et wiki no-code | Jennifer Jaulin',
+  salesforce: 'Salesforce — Administratrice CRM certifiée | Jennifer Jaulin',
+  sharepoint: 'SharePoint — Gestion documentaire Microsoft | Jennifer Jaulin',
+  'power-automate': 'Power Automate — Automatisation Microsoft 365 | Jennifer Jaulin',
+  docusign: 'DocuSign — Signature électronique | Jennifer Jaulin',
+  'claude-code': 'Claude Code — Développement assisté par IA | Jennifer Jaulin',
+  glide: 'Glide — Application mobile no-code | Jennifer Jaulin',
+  monday: 'Monday.com — Gestion de projets no-code | Jennifer Jaulin',
+  systemeio: 'Systeme.io — Tunnels de vente et marketing no-code | Jennifer Jaulin',
 };
 
 export async function generateStaticParams() {

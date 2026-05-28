@@ -5,6 +5,7 @@ import { projects } from '@/data/projects';
 import { ArrowLeft, ArrowRight, CheckCircle, Lightbulb, Target, Wrench, User, Calendar } from 'lucide-react';
 import MotionSection from '@/components/MotionSection';
 import GalleryLightbox from '@/components/GalleryLightbox';
+import GalleryGrid from '@/components/GalleryGrid';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stackpilot.fr';
 
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
 
-  const title = `${project.title} — ${project.type} | StackPilot`;
+  const title = `${project.title} — ${project.type} | Jennifer Jaulin`;
   const description = project.shortDescription;
 
   return {
@@ -152,13 +153,22 @@ export default async function ProjetDetailPage({ params }: { params: Promise<{ s
               <p className="text-sm text-violet-800 leading-relaxed">{project.role}</p>
             </div>
 
-            {/* Galerie */}
-            {project.gallery.length >= 1 && (
+            {/* Galerie enrichie (illustrations avec titres/descriptions + lightbox) */}
+            {project.galleryItems && project.galleryItems.length > 0 ? (
+              <div className="bg-white rounded-2xl border border-slate-200/60 shadow-sm p-6">
+                <p className="section-tag mb-1">Galerie</p>
+                <p className="text-xs text-slate-400 mb-5 leading-relaxed">
+                  Pour rendre le projet plus lisible, les visuels ci-dessous synthétisent le parcours automatisé, les bénéfices avant/après et l&apos;architecture technique simplifiée.
+                </p>
+                <GalleryGrid items={project.galleryItems} />
+              </div>
+            ) : project.gallery.length >= 1 ? (
               <div className="bg-white rounded-2xl border border-slate-200/60 shadow-sm p-6">
                 <p className="section-tag mb-4">Galerie</p>
                 <GalleryLightbox images={project.gallery} title={project.title} />
               </div>
-            )}
+            ) : null}
+
 
           </div>
 

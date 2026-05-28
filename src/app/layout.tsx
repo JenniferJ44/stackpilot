@@ -13,13 +13,13 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stackpilot.fr';
 
 export const metadata: Metadata = {
   title: {
-    default: "StackPilot — Product Builder No-Code freelance",
+    default: "Jennifer Jaulin — Product Builder No-Code freelance",
     template: "%s",
   },
   description:
-    "Jennifer Jaulin, Product Builder No-Code freelance. Je conçois des MVP, automatisations et outils métiers no-code. Diagnostic de stack gratuit inclus.",
+    "Product Builder No-Code freelance, j'aide les indépendants, startups et équipes métier à créer des outils métiers, CRM, automatisations, applications no-code et solutions IA.",
   openGraph: {
-    siteName: "StackPilot",
+    siteName: "Jennifer Jaulin",
     type: "website",
     locale: "fr_FR",
   },
@@ -43,16 +43,16 @@ const jsonLd = {
       '@type': 'WebSite',
       '@id': `${BASE_URL}/#website`,
       url: BASE_URL,
-      name: 'StackPilot',
-      description: 'Diagnostic de stack no-code et accompagnement Product Builder par Jennifer Jaulin',
+      name: 'Jennifer Jaulin — Product Builder No-Code',
+      description: 'Diagnostic no-code gratuit et accompagnement Product Builder par Jennifer Jaulin',
       publisher: { '@id': `${BASE_URL}/#jennifer` },
     },
     {
       '@type': 'ProfessionalService',
       '@id': `${BASE_URL}/#service`,
-      name: 'StackPilot — Product Builder No-Code',
+      name: 'Jennifer Jaulin — Product Builder No-Code freelance',
       description:
-        'Jennifer Jaulin, Product Builder No-Code freelance. Conception de MVP, automatisations et outils métiers no-code.',
+        'Product Builder No-Code freelance. Conception de MVP, automatisations, CRM et outils métiers no-code.',
       url: BASE_URL,
       founder: { '@id': `${BASE_URL}/#jennifer` },
       sameAs: [

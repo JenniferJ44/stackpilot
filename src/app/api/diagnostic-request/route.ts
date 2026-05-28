@@ -42,7 +42,7 @@ function buildNotificationHtml(
   return `
     <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:640px;margin:0 auto;color:#1e293b;">
       <div style="background:linear-gradient(135deg,#4f46e5,#7c3aed);padding:24px 28px;border-radius:12px 12px 0 0;">
-        <h2 style="color:white;margin:0;font-size:18px;font-weight:700;">📋 Nouveau diagnostic StackPilot</h2>
+        <h2 style="color:white;margin:0;font-size:18px;font-weight:700;">📋 Nouveau diagnostic — Jennifer Jaulin</h2>
         <p style="color:rgba(255,255,255,0.8);margin:6px 0 0;font-size:13px;">${date}</p>
       </div>
       <div style="background:#f8fafc;padding:28px;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px;">
@@ -77,12 +77,12 @@ function buildConfirmationHtml(firstName: string): string {
   return `
     <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;color:#1e293b;">
       <div style="background:linear-gradient(135deg,#4f46e5,#7c3aed);padding:24px 28px;border-radius:12px 12px 0 0;">
-        <h2 style="color:white;margin:0;font-size:18px;font-weight:700;">Votre diagnostic StackPilot a bien été reçu</h2>
+        <h2 style="color:white;margin:0;font-size:18px;font-weight:700;">Votre diagnostic a bien été reçu</h2>
       </div>
       <div style="background:#f8fafc;padding:28px;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px;">
         <p style="margin:0 0 16px;font-size:15px;">Bonjour ${firstName ? firstName + ',' : ','}</p>
         <p style="margin:0 0 16px;font-size:14px;line-height:1.7;color:#334155;">
-          Merci d'avoir complété le diagnostic StackPilot.
+          Merci d'avoir complété le diagnostic StackPilot. Je le lis personnellement.
         </p>
         <p style="margin:0 0 16px;font-size:14px;line-height:1.7;color:#334155;">
           J'ai bien reçu vos réponses et je vais les examiner rapidement. Je reviendrai vers vous
@@ -96,7 +96,7 @@ function buildConfirmationHtml(firstName: string): string {
         <p style="margin:0 0 24px;font-size:14px;color:#334155;">À très bientôt,</p>
         <div style="border-top:1px solid #e2e8f0;padding-top:20px;">
           <p style="margin:0 0 4px;font-weight:700;font-size:14px;">Jennifer Jaulin</p>
-          <p style="margin:0 0 12px;color:#64748b;font-size:13px;">Product Builder No-Code · StackPilot</p>
+          <p style="margin:0 0 12px;color:#64748b;font-size:13px;">Product Builder No-Code freelance</p>
           <p style="margin:0;font-size:13px;">
             <a href="https://www.linkedin.com/in/jennifer-jaulin-64b872116/" style="color:#4f46e5;text-decoration:none;">LinkedIn</a>
             &nbsp;·&nbsp;
@@ -163,10 +163,10 @@ export async function POST(req: NextRequest) {
 
     // ── Send notification to me ─────────────────────────────────────────────
     const { error: notifError } = await resend.emails.send({
-      from: `StackPilot Diagnostic <${fromEmail}>`,
+      from: `Jennifer Jaulin <${fromEmail}>`,
       to: [toEmail],
       replyTo: visitorEmail,
-      subject: `Nouveau diagnostic StackPilot – ${subjectName}`,
+      subject: `Nouveau diagnostic StackPilot — ${subjectName}`,
       html: buildNotificationHtml(
         contact as Record<string, string | null>,
         diagnosticOriginal,
@@ -184,9 +184,9 @@ export async function POST(req: NextRequest) {
 
     // ── Send confirmation to visitor ────────────────────────────────────────
     const { error: confirmError } = await resend.emails.send({
-      from: `Jennifer Jaulin · StackPilot <${fromEmail}>`,
+      from: `Jennifer Jaulin <${fromEmail}>`,
       to: [visitorEmail],
-      subject: 'Votre diagnostic StackPilot a bien été reçu',
+      subject: 'Votre diagnostic a bien été reçu — Jennifer Jaulin',
       html: buildConfirmationHtml(firstName),
     });
 

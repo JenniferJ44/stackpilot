@@ -377,7 +377,7 @@ export async function generateDiagnosticPdf({
     CW - 10
   );
   const pt2Lines: string[] = doc.splitTextToSize(
-    'Vous pouvez contacter StackPilot pour transformer ce diagnostic en devis ou en atelier de cadrage.',
+    'Contactez Jennifer Jaulin pour transformer ce diagnostic en devis ou en atelier de cadrage.',
     CW - 10
   );
   const nsH = (pt1Lines.length + pt2Lines.length) * 5 + 22;
@@ -413,7 +413,7 @@ export async function generateDiagnosticPdf({
     doc.setFontSize(7.5);
     doc.setTextColor(...C.s400);
     doc.text(
-      'StackPilot — Product Builder No-Code — Automatisation, outils internes, Bubble, Airtable, Make, Notion, Salesforce',
+      'Jennifer Jaulin — Product Builder No-Code — Automatisation, outils internes, Bubble, Airtable, Make, Notion, Salesforce',
       M, PH - 8.5
     );
     doc.text(`Page ${p}/${totalPages}`, PW - M, PH - 8.5, { align: 'right' });

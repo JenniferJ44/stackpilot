@@ -5,14 +5,14 @@ import { ArrowRight, Zap, CheckCircle, BarChart2, Workflow, Brain, Star, Calenda
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stackpilot.fr';
 
 export const metadata: Metadata = {
-  title: 'Product Builder No-Code freelance — StackPilot',
+  title: 'Jennifer Jaulin — Product Builder No-Code freelance',
   description:
-    'Jennifer Jaulin, Product Builder No-Code freelance. Je conçois vos MVP, automatisations et outils métiers no-code. Diagnostic de stack gratuit inclus.',
+    'Product Builder No-Code freelance, j\'aide les indépendants, startups et équipes métier à créer des outils métiers, CRM, automatisations, applications no-code et solutions IA.',
   alternates: { canonical: BASE_URL },
   openGraph: {
-    title: 'Product Builder No-Code freelance — StackPilot',
+    title: 'Jennifer Jaulin — Product Builder No-Code freelance',
     description:
-      'Jennifer Jaulin, Product Builder No-Code freelance. Je conçois vos MVP, automatisations et outils métiers no-code.',
+      'Diagnostic gratuit et accompagnement sur mesure pour créer vos outils métiers no-code, CRM, automatisations et solutions IA.',
     type: 'website',
     url: BASE_URL,
   },
@@ -27,27 +27,27 @@ import CalendlyPopupButton from "@/components/CalendlyPopupButton";
 const features = [
   {
     icon: Brain,
-    title: "Diagnostic de stack",
+    title: "Un diagnostic guidé",
     description:
-      "Répondez à quelques questions sur votre projet et obtenez une architecture technologique personnalisée, basée sur une matrice d'expertise.",
+      "Répondez à quelques questions sur votre projet, vos objectifs, votre budget et vos contraintes pour obtenir une première lecture claire de vos besoins.",
   },
   {
     icon: Layers,
-    title: "12 technologies maîtrisées",
+    title: "Des recommandations adaptées",
     description:
-      "No-code, automatisation, CRM, gestion documentaire, signature électronique, IA — toutes les catégories pour votre projet numérique.",
+      "Le diagnostic compare votre besoin avec plusieurs familles de solutions : no-code, CRM, automatisation, bases de données, gestion documentaire, signature électronique ou IA.",
   },
   {
     icon: BarChart2,
-    title: "Score de compatibilité",
+    title: "Une aide à la décision",
     description:
-      "Chaque outil reçoit un score basé sur votre type de projet, budget, urgence, taille d'équipe et fonctionnalités requises.",
+      "Chaque recommandation est accompagnée d'un niveau de pertinence pour vous aider à comprendre quels outils sont les plus cohérents avec votre projet.",
   },
   {
     icon: Workflow,
-    title: "Accompagnement expert",
+    title: "Un accompagnement humain",
     description:
-      "Je peux vous accompagner pour concevoir et déployer la stack recommandée, de A à Z.",
+      "Le diagnostic vous donne une première orientation. Ensuite, je peux vous accompagner pour concevoir, automatiser et déployer la solution la plus adaptée.",
   },
 ];
 
@@ -94,19 +94,19 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto text-center">
           <div className="hero-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium px-4 py-2 rounded-full mb-8">
             <Star className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-            Par Jennifer Jaulin, Product Builder No-Code
+            Jennifer Jaulin · Product Builder No-Code freelance
           </div>
 
           <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            Je crée vos outils métiers{" "}
             <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
-              Product Builder No-Code
-            </span>{" "}
-            freelance pour créer vos outils métiers
+              no-code, CRM et automatisations
+            </span>
           </h1>
 
           <p className="hero-subtitle text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            StackPilot analyse votre projet en 2 minutes et vous recommande les blocs technologiques
-            no-code, CRM, automatisation ou IA les plus adaptés à vos besoins et votre budget.
+            Grâce à mon diagnostic gratuit, vous obtenez une première recommandation en quelques minutes
+            pour identifier les solutions no-code, CRM, automatisation ou IA les plus adaptées à votre projet.
           </p>
 
           <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
@@ -114,7 +114,7 @@ export default function Home() {
               href="/diagnostic"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-semibold hover:opacity-90 hover:scale-[1.02] transition-all shadow-lg shadow-indigo-500/30"
             >
-              Lancer mon diagnostic
+              Lancer le diagnostic gratuit
               <ArrowRight className="w-4 h-4" />
             </Link>
             <CalendlyPopupButton
@@ -122,12 +122,12 @@ export default function Home() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 hover:border-white/30 transition-all backdrop-blur-sm"
             >
               <Calendar className="w-4 h-4" />
-              Réserver un diagnostic
+              Réserver une visio
             </CalendlyPopupButton>
           </div>
 
           <div className="hero-trust mt-12 flex flex-wrap justify-center gap-6 text-sm text-slate-400">
-            {["Gratuit", "Résultats en 2 minutes", "12 technologies maîtrisées", "Aucun compte requis"].map((t) => (
+            {["Gratuit", "Résultats en 2 minutes", "12+ outils analysés", "Aucun compte requis"].map((t) => (
               <div key={t} className="flex items-center gap-1.5">
                 <CheckCircle className="w-3.5 h-3.5 text-green-400" />
                 {t}
@@ -185,10 +185,11 @@ export default function Home() {
               Avantages
               <span className="w-5 h-px bg-indigo-300" />
             </p>
-            <h2 className="text-3xl font-bold text-slate-900 mb-3">Pourquoi StackPilot ?</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-3">Un diagnostic conçu pour clarifier votre projet</h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              Un outil conçu par une experte pour vous donner des recommandations concrètes et
-              actionnables, sans jargon.
+              J&apos;ai conçu ce diagnostic comme un point de départ simple : vous répondez à quelques questions,
+              puis vous obtenez une première recommandation claire pour identifier les solutions no-code,
+              CRM, automatisation ou IA les plus adaptées.
             </p>
           </MotionSection>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -208,6 +209,12 @@ export default function Home() {
               );
             })}
           </div>
+          <MotionSection delay={0.1} className="mt-8 text-center">
+            <p className="text-sm text-slate-400 max-w-2xl mx-auto italic leading-relaxed">
+              Ce diagnostic n&apos;est pas une plateforme impersonnelle : c&apos;est l&apos;outil que j&apos;utilise
+              pour initier l&apos;échange et vous proposer une première analyse avant un accompagnement sur mesure.
+            </p>
+          </MotionSection>
         </div>
       </section>
 
@@ -222,8 +229,8 @@ export default function Home() {
             </p>
             <h2 className="text-3xl font-bold text-slate-900 mb-3">Technologies maîtrisées</h2>
             <p className="text-slate-500 max-w-xl mx-auto">
-              Je maîtrise ces outils à un niveau expert — et StackPilot les évalue
-              pour vous proposer la meilleure combinaison.
+              Je maîtrise ces outils à un niveau expert et je vous aide à identifier
+              la meilleure combinaison selon votre contexte et vos objectifs.
             </p>
           </MotionSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -376,7 +383,7 @@ export default function Home() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
             >
               <Calendar className="w-4 h-4" />
-              Réserver un diagnostic
+              Réserver une visio
             </CalendlyPopupButton>
           </div>
         </MotionSection>

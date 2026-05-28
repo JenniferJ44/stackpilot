@@ -1,17 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Star, ExternalLink } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stackpilot.fr';
 
 export const metadata: Metadata = {
-  title: 'À propos — Jennifer Jaulin, Product Builder No-Code | StackPilot',
+  title: 'À propos — Jennifer Jaulin, Product Builder No-Code freelance',
   description:
     'Jennifer Jaulin, Product Builder No-Code freelance. Je conçois des MVP, automatisations et outils métiers avec Bubble, Make, Airtable, Salesforce et plus. Contactez-moi.',
   alternates: { canonical: `${BASE_URL}/a-propos` },
   openGraph: {
-    title: 'À propos — Jennifer Jaulin, Product Builder No-Code | StackPilot',
+    title: 'À propos — Jennifer Jaulin, Product Builder No-Code freelance',
     description:
       'Jennifer Jaulin, Product Builder No-Code freelance. Je conçois des MVP, automatisations et outils métiers no-code.',
     url: `${BASE_URL}/a-propos`,
@@ -131,19 +132,18 @@ export default function AProposPage() {
                 Jennifer Jaulin
               </h1>
               <p className="text-slate-300 leading-relaxed mb-4 text-sm">
-                Je suis Jennifer Jaulin, Product Builder No-Code freelance. J&apos;aide les indépendants,
-                associations et petites structures à transformer leurs idées, leurs processus ou leurs
-                besoins métier en outils numériques concrets.
+                J&apos;accompagne les indépendants, startups et équipes métier dans la conception d&apos;outils
+                numériques sur mesure : CRM, automatisations, applications internes, bases de données,
+                espaces clients et solutions no-code.
               </p>
               <p className="text-slate-300 leading-relaxed mb-4 text-sm">
-                J&apos;interviens de bout en bout : cadrage du besoin, structuration des données, conception
-                des parcours utilisateurs, création d&apos;un MVP, automatisation des tâches répétitives et
-                amélioration continue.
+                Mon approche combine compréhension métier, structuration produit et construction concrète
+                avec des outils comme Bubble, Airtable, Make, Notion, Salesforce ou encore des solutions IA.
               </p>
               <p className="text-slate-300 leading-relaxed mb-8 text-sm">
-                Mon approche combine vision produit, logique métier et maîtrise des outils no-code comme
-                Bubble, Airtable, Make, Salesforce, Notion ou Monday. L&apos;objectif : créer des solutions
-                utiles, claires et maintenables, sans complexité inutile.
+                J&apos;ai conçu StackPilot comme un outil de diagnostic gratuit pour aider les porteurs de
+                projet à clarifier leurs besoins et identifier les bonnes briques technologiques avant de
+                passer à la construction.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
@@ -168,8 +168,42 @@ export default function AProposPage() {
             </div>
             <div className="md:col-span-2">
               <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-6 border border-white/20 text-center">
-                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-400 to-violet-500 mx-auto mb-4 flex items-center justify-center text-5xl shadow-lg">
-                  👩‍💻
+                {/* Photo + SVG border draw + étincelles */}
+                <div className="relative mx-auto mb-4 w-44 h-44">
+                  <Image
+                    src="/images/Photo_JenniferJaulin.png"
+                    alt="Photo de Jennifer Jaulin, Product Builder No-Code freelance"
+                    width={176}
+                    height={176}
+                    className="w-full h-full rounded-3xl object-cover"
+                    style={{ objectPosition: 'center 35%' }}
+                    priority
+                  />
+                  <svg
+                    className="pointer-events-none absolute inset-0 h-full w-full"
+                    viewBox="0 0 176 176"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <linearGradient id="photoBorderGradient" x1="0" y1="0" x2="176" y2="176" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%"   stopColor="#C084FC" />
+                        <stop offset="45%"  stopColor="#A855F7" />
+                        <stop offset="100%" stopColor="#60A5FA" />
+                      </linearGradient>
+                    </defs>
+                    <rect
+                      x="2"
+                      y="2"
+                      width="172"
+                      height="172"
+                      rx="24"
+                      className="photo-border-draw"
+                    />
+                  </svg>
+                  <span className="spark spark-1" />
+                  <span className="spark spark-2" />
+                  <span className="spark spark-3" />
                 </div>
                 <h3 className="text-white font-bold text-lg mb-1">Jennifer Jaulin</h3>
                 <p className="text-slate-300 text-sm mb-5">Product Builder No-Code</p>

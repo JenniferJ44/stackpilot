@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Layers, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import CalendlyPopupButton from '@/components/CalendlyPopupButton';
 
 const links = [
@@ -43,20 +44,27 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 font-bold text-xl group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center shadow-sm group-hover:shadow-indigo-200 transition-shadow">
-              <Layers className="w-4 h-4 text-white" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image
+              src="/images/logo_jj.png"
+              alt="Logo Jennifer Jaulin"
+              width={44}
+              height={44}
+              className="h-11 w-11 rounded-2xl object-cover shrink-0 shadow-sm group-hover:shadow-indigo-200 transition-shadow"
+              priority
+            />
+            <div className="hidden sm:flex flex-col leading-snug">
+              <span className={`text-base font-bold whitespace-nowrap ${isHeroNav ? 'text-white' : 'bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent'}`}>
+                Jennifer Jaulin
+              </span>
+              <span className={`text-xs whitespace-nowrap hidden xl:block ${isHeroNav ? 'text-white/60' : 'text-slate-400'}`}>
+                Product Builder No-Code
+              </span>
             </div>
-            <span className={isHeroNav
-              ? 'text-white'
-              : 'bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent'
-            }>
-              StackPilot
-            </span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {links.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -84,14 +92,14 @@ export default function Navigation() {
               context="nav-desktop"
               className="ml-4 flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm font-semibold hover:opacity-90 hover:shadow-lg hover:shadow-indigo-200/50 transition-all shadow-sm"
             >
-              Réserver un diagnostic
+              Réserver une visio
               <ArrowRight className="w-3.5 h-3.5" />
             </CalendlyPopupButton>
           </div>
 
           {/* Mobile toggle */}
           <button
-            className={`md:hidden p-2 rounded-lg transition-colors ${
+            className={`lg:hidden p-2 rounded-lg transition-colors ${
               isHeroNav ? 'text-white/80 hover:bg-white/10' : 'text-slate-600 hover:bg-slate-100'
             }`}
             onClick={() => setOpen(!open)}
@@ -104,7 +112,7 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#f7f9fd] border-t border-indigo-100/40 shadow-lg">
+        <div className="lg:hidden bg-[#f7f9fd] border-t border-indigo-100/40 shadow-lg">
           <div className="px-4 py-3 flex flex-col gap-1">
             {links.map((link) => (
               <Link
@@ -123,7 +131,7 @@ export default function Navigation() {
               context="nav-mobile"
               className="mt-2 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-sm font-semibold"
             >
-              Réserver un diagnostic
+              Réserver une visio
               <ArrowRight className="w-3.5 h-3.5" />
             </CalendlyPopupButton>
           </div>

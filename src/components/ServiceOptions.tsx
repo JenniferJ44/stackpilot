@@ -14,7 +14,7 @@ export default function ServiceOptions({ options, onCtaClick }: Props) {
 
   return (
     <section className="mt-10">
-      <span className="section-tag">Ce que StackPilot peut construire pour vous</span>
+      <span className="section-tag">Ce que je peux construire pour vous</span>
       <h2 className="text-xl font-bold text-slate-900 mb-1">Comment je peux vous accompagner</h2>
       <p className="text-sm text-slate-500 mb-6">Choisissez le niveau d'accompagnement qui correspond à votre situation.</p>
 
