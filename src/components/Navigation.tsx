@@ -20,6 +20,8 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  const isHeroNav = pathname === '/' && !scrolled;
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', onScroll);
@@ -45,7 +47,10 @@ export default function Navigation() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center shadow-sm group-hover:shadow-indigo-200 transition-shadow">
               <Layers className="w-4 h-4 text-white" />
             </div>
-            <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+            <span className={isHeroNav
+              ? 'text-white'
+              : 'bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent'
+            }>
               StackPilot
             </span>
           </Link>
@@ -60,13 +65,17 @@ export default function Navigation() {
                   href={link.href}
                   className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     isActive
-                      ? 'text-indigo-700 bg-indigo-50 font-semibold'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
+                      ? isHeroNav
+                        ? 'text-white bg-white/15 font-semibold'
+                        : 'text-indigo-700 bg-indigo-50 font-semibold'
+                      : isHeroNav
+                        ? 'text-white/80 hover:text-white hover:bg-white/10'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/70'
                   }`}
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-indigo-500" />
+                    <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${isHeroNav ? 'bg-white/70' : 'bg-indigo-500'}`} />
                   )}
                 </Link>
               );
@@ -82,7 +91,9 @@ export default function Navigation() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              isHeroNav ? 'text-white/80 hover:bg-white/10' : 'text-slate-600 hover:bg-slate-100'
+            }`}
             onClick={() => setOpen(!open)}
             aria-label="Menu"
           >

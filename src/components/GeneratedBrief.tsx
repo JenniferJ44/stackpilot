@@ -49,7 +49,7 @@ export default function GeneratedBrief({ recommendation, projectCategory, mainOb
         aria-expanded={open}
       >
         <div>
-          <span className="section-tag block mb-0.5">Brief projet généré</span>
+          <span className="section-tag block mb-2">Brief projet généré</span>
           <span className="font-bold text-slate-800 text-sm">Consulter le brief structuré de votre projet</span>
           <p className="text-xs text-slate-500 mt-0.5">Synthèse prête à partager ou à envoyer directement.</p>
         </div>

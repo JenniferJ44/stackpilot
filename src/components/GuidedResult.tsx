@@ -7,7 +7,7 @@ import { getAlternateInitial } from '@/lib/animations';
 import { GuidedRecommendation, GuidedAnswers } from '@/lib/guidedScoring';
 import { technologies } from '@/data/technologies';
 import Link from 'next/link';
-import DiagnosticContactForm, { DiagnosticSuccessCard } from './DiagnosticContactForm';
+import DiagnosticContactForm from './DiagnosticContactForm';
 import { computeMaturity } from '@/lib/maturityScoring';
 import CalendlyPopupButton, { triggerCalendlyPopup } from '@/components/CalendlyPopupButton';
 import { DEFAULT_ROADMAP, getEstimation, getRelatedProjects, SERVICE_OPTIONS } from '@/data/resultConfig';
@@ -375,7 +375,40 @@ export default function GuidedResult({ recommendation: rec, answers, onReset }: 
       {/* 16. CTA */}
       <div ref={formAnchorRef} />
       {formState === 'success' ? (
-        <DiagnosticSuccessCard onReset={onReset} />
+        <div className="space-y-4">
+          <div className="bg-green-50 border border-green-100 rounded-2xl p-6 text-center">
+            <div className="flex justify-center mb-3">
+              <CheckCircle className="w-10 h-10 text-green-500" />
+            </div>
+            <h3 className="text-base font-bold text-slate-900 mb-1">Diagnostic envoyé !</h3>
+            <p className="text-sm text-slate-600">
+              Merci, votre diagnostic a bien été transmis. Je reviendrai vers vous pour affiner
+              le besoin et préparer un devis.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center flex-wrap">
+            <CalendlyPopupButton
+              context="diagnostic-success"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-indigo-200 bg-white text-indigo-700 text-sm font-semibold hover:bg-indigo-50 transition-colors"
+              label="Réserver un appel"
+            />
+            <DownloadDiagnosticPdfButton
+              answers={answers}
+              recommendation={rec}
+              maturity={maturity}
+              estimation={estimation}
+              roadmap={DEFAULT_ROADMAP}
+            />
+          </div>
+          <div className="text-center">
+            <button
+              onClick={onReset}
+              className="text-xs text-slate-400 hover:text-slate-600 transition-colors underline underline-offset-2"
+            >
+              Refaire le diagnostic
+            </button>
+          </div>
+        </div>
       ) : formState === 'open' ? (
         <DiagnosticContactForm
           answers={answers}

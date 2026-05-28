@@ -27,18 +27,18 @@ function LinkedinIcon({ className }: { className?: string }) {
 }
 
 const expertiseTools = [
-  { name: 'Bubble', level: 'Expert', icon: '🔵', desc: 'Applications web no-code complètes' },
-  { name: 'Airtable', level: 'Expert', icon: '🟡', desc: 'Bases de données et CRM personnalisés' },
-  { name: 'Make', level: 'Expert', icon: '⚡', desc: 'Automatisation de workflows' },
-  { name: 'Notion', level: 'Expert', icon: '⬛', desc: 'Bases de connaissances et wikis' },
-  { name: 'Salesforce', level: 'Expert', icon: '☁️', desc: 'CRM enterprise et configuration' },
-  { name: 'SharePoint', level: 'Expert', icon: '📁', desc: 'Gestion documentaire Microsoft' },
-  { name: 'Power Automate', level: 'Expert', icon: '🔷', desc: 'Automatisation Microsoft 365' },
-  { name: 'DocuSign', level: 'Expert', icon: '✍️', desc: 'Signature électronique et CLM' },
-  { name: 'Monday', level: 'Expert', icon: '📋', desc: 'Gestion de projets et équipes' },
-  { name: 'Glide', level: 'Expert', icon: '📱', desc: 'Applications mobiles no-code' },
-  { name: 'Claude Code', level: 'Expert', icon: '🤖', desc: 'Développement assisté par IA' },
-];
+  { name: 'Bubble',       level: 'Expert', icon: '🔵', desc: 'Applications web no-code complètes',    slug: 'bubble',      logoUrl: '/logo_outils/bubble.png' },
+  { name: 'Airtable',     level: 'Expert', icon: '🟡', desc: 'Bases de données et CRM personnalisés', slug: 'airtable',    logoUrl: '/logo_outils/airtable.png' },
+  { name: 'Make',         level: 'Expert', icon: '⚡', desc: 'Automatisation de workflows',           slug: 'make',        logoUrl: '/logo_outils/make.png' },
+  { name: 'Notion',       level: 'Expert', icon: '⬛', desc: 'Bases de connaissances et wikis',       slug: 'notion',      logoUrl: '/logo_outils/notion.png' },
+  { name: 'Salesforce',   level: 'Expert', icon: '☁️', desc: 'CRM enterprise et configuration',       slug: 'salesforce',  logoUrl: '/logo_outils/salesforce.png' },
+  { name: 'SharePoint',   level: 'Expert', icon: '📁', desc: 'Gestion documentaire Microsoft',        slug: 'sharepoint',  logoUrl: '/logo_outils/sharepoint.png' },
+  { name: 'DocuSign',     level: 'Expert', icon: '✍️', desc: 'Signature électronique et CLM',         slug: 'docusign',    logoUrl: '/logo_outils/docusign.png' },
+  { name: 'Monday',       level: 'Expert', icon: '📋', desc: 'Gestion de projets et équipes',         slug: 'monday' },
+  { name: 'Glide',        level: 'Expert', icon: '📱', desc: 'Applications mobiles no-code',          slug: 'glide' },
+  { name: 'Stripe',       level: 'Expert', icon: '💳', desc: 'Paiements en ligne et abonnements',     slug: 'stripe',      logoUrl: '/logo_outils/stripe.png' },
+  { name: 'Claude Code',  level: 'Expert', icon: '🤖', desc: 'Développement assisté par IA',          slug: 'claude-code' },
+] as const;
 
 const services = [
   {
@@ -238,11 +238,22 @@ export default function AProposPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {expertiseTools.map((tool) => (
-              <div
+              <Link
                 key={tool.name}
-                className="flex items-center gap-4 bg-[#f7f9fd] rounded-2xl border border-slate-200/60 p-4 hover:border-indigo-200 hover:bg-indigo-50/30 hover:shadow-sm transition-all"
+                href={`/technologies/${tool.slug}`}
+                className="flex items-center gap-4 bg-[#f7f9fd] rounded-2xl border border-slate-200/60 p-4 hover:border-indigo-200 hover:bg-indigo-50/30 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-pointer"
               >
-                <span className="text-3xl">{tool.icon}</span>
+                <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                  {'logoUrl' in tool ? (
+                    <img
+                      src={tool.logoUrl}
+                      alt={`Logo ${tool.name}`}
+                      className="w-9 h-9 object-contain"
+                    />
+                  ) : (
+                    <span className="text-3xl">{tool.icon}</span>
+                  )}
+                </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-0.5">
                     <span className="font-bold text-slate-900 text-sm">{tool.name}</span>
@@ -253,7 +264,7 @@ export default function AProposPage() {
                   <p className="text-xs text-slate-500">{tool.desc}</p>
                 </div>
                 <Star className="w-4 h-4 text-violet-500 fill-violet-500 shrink-0" />
-              </div>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-8">

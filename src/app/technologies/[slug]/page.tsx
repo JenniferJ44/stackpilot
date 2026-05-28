@@ -123,16 +123,16 @@ export default async function TechnologyPage({ params }: { params: Promise<{ slu
               </div>
               <p className="text-slate-600 leading-relaxed">{tech.description}</p>
             </div>
-            <div className="flex flex-row sm:flex-col items-center sm:items-end gap-3 shrink-0">
+            <div className="flex flex-col items-start sm:items-end gap-2 shrink-0 sm:max-w-[160px]">
               <a
                 href={tech.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#f7f9fd] border border-slate-200/70 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:border-indigo-200 hover:text-indigo-700 transition-all"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#f7f9fd] border border-slate-200/70 text-sm font-medium text-slate-700 hover:bg-indigo-50 hover:border-indigo-200 hover:text-indigo-700 transition-all whitespace-nowrap"
               >
                 Site officiel <ExternalLink className="w-3.5 h-3.5" />
               </a>
-              <span className="text-sm text-slate-400">{tech.pricing}</span>
+              <span className="text-sm text-slate-400 break-words sm:text-right">{tech.pricing}</span>
             </div>
           </div>
         </MotionSection>

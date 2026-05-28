@@ -13,6 +13,7 @@ const CATEGORIES: { value: TechCategory | 'all'; label: string }[] = [
   { value: 'crm', label: 'CRM' },
   { value: 'documentation', label: 'Documentation' },
   { value: 'signature', label: 'Signature' },
+  { value: 'payments', label: 'Paiements' },
   { value: 'ai-dev', label: 'Dev IA' },
 ];
 

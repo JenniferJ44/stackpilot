@@ -137,9 +137,12 @@ export default function ChatAgent() {
 
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const msgsRef = useRef<HTMLDivElement>(null);
+  const initialized = useRef(false);
 
-  // Start on mount
+  // Start on mount — guard prevents double-init in React 18 Strict Mode
   useEffect(() => {
+    if (initialized.current) return;
+    initialized.current = true;
     appendStep(FLOW_STEPS[0], {}, false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
