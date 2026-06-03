@@ -30,10 +30,10 @@ export const projects: Project[] = [
     id: 'cabinetflow',
     slug: 'cabinetflow',
     title: 'CabinetFlow',
-    type: 'Outil métier / facturation',
-    status: 'Prototype fonctionnel',
+    type: 'No-code · Application métier',
+    status: 'Projet portfolio',
     shortDescription:
-      "Outil de gestion pensé pour simplifier la création de factures et structurer les informations administratives d'une activité de service.",
+      "Application de gestion tout-en-un pour cabinet : clients, rendez-vous, comptes-rendus, facturation et tableau de bord.",
     description:
       "CabinetFlow est un prototype d'outil métier conçu pour accompagner une activité de service dans la gestion de ses documents administratifs, notamment la création de factures. L'objectif du projet est de transformer une tâche souvent répétitive et peu fluide en un parcours clair, guidé et structuré.\n\nL'interface permet à l'utilisateur de renseigner progressivement les informations nécessaires à la génération d'une facture : données client, prestations, montants, informations complémentaires et éléments de suivi. Le projet met l'accent sur la lisibilité, la simplicité d'utilisation et la réduction des erreurs de saisie.\n\nCe projet illustre ma capacité à concevoir des outils internes ou SaaS métier à partir d'un besoin opérationnel concret : clarifier un processus, structurer les données, créer une interface agréable et préparer une base solide pour l'automatisation.",
     problem:
@@ -52,52 +52,19 @@ export const projects: Project[] = [
     stack: ['Claude Code', 'React', 'TypeScript', 'UI responsive', 'Logique formulaire', "Design d'outil métier"],
     role:
       "J'ai conçu l'interface, structuré le parcours de saisie, défini les informations clés à afficher et prototypé une expérience utilisateur adaptée à un outil métier simple, clair et efficace.",
-    tags: ['Outil métier', 'Facturation', 'Formulaire', 'SaaS', 'Product Builder', 'React', 'TypeScript'],
-    mainImage: '/projects/CabinetFlow.png',
-    gallery: ['/projects/CabinetFlow.png', '/projects/CabinetFlow_Formulaire_Facture.png'],
-    associatedTechnologies: ['bubble', 'claude-code', 'react', 'typescript'],
-  },
-  {
-    id: 'la-bonne-occaz',
-    slug: 'la-bonne-occaz',
-    title: 'La Bonne Occaz',
-    type: 'Marketplace / petites annonces',
-    status: 'Prototype fonctionnel',
-    shortDescription:
-      "Marketplace de petites annonces permettant de consulter, rechercher, mettre en favori et publier des produits entre particuliers.",
-    description:
-      "La Bonne Occaz est un prototype de plateforme de petites annonces inspiré des usages des sites de seconde main. Le projet propose une interface claire pour explorer des annonces, parcourir des catégories, rechercher un produit, consulter des cartes d'annonces et déposer une nouvelle annonce.\n\nL'objectif était de créer une expérience simple, directe et familière pour l'utilisateur, tout en travaillant une interface plus moderne et plus visuelle qu'un site classique de petites annonces. Les annonces sont présentées sous forme de cartes avec image, vendeur, titre et prix afin de faciliter la lecture rapide.\n\nCe projet met en avant une logique de marketplace : structuration des annonces, mise en avant des catégories, recherche, favoris et parcours de dépôt d'annonce. Il peut servir de base à un MVP de plateforme d'achat/revente entre particuliers ou de marketplace spécialisée.",
-    problem:
-      "Les plateformes de petites annonces nécessitent une expérience rapide et intuitive. L'utilisateur doit pouvoir comprendre immédiatement ce qu'il peut acheter, rechercher un produit, identifier les catégories disponibles et déposer une annonce sans friction.",
-    solution:
-      "Créer une page d'accueil marketplace claire, avec une navigation simple, des catégories visibles, une recherche accessible, des annonces récentes et des actions essentielles comme le dépôt d'annonce ou l'ajout aux favoris.",
-    features: [
-      "Page d'accueil marketplace",
-      "Barre de recherche",
-      "Catégories d'annonces : voitures, meubles, informatique, vêtements",
-      "Liste d'annonces récentes",
-      "Cartes produits avec image, titre, vendeur et prix",
-      "Bouton de dépôt d'annonce",
-      "Système de favoris visuel",
-      "Interface responsive",
-      "Design moderne et rassurant",
-    ],
-    stack: ['Claude Code', 'React', 'TypeScript', 'UI responsive', 'Design marketplace', 'Prototypage produit'],
-    role:
-      "J'ai conçu l'interface, structuré la page d'accueil, défini les composants principaux d'une marketplace et travaillé l'expérience utilisateur autour de la recherche, des catégories, des annonces et des favoris.",
-    tags: ['Marketplace', 'Petites annonces', 'MVP', 'UI Design', 'React', 'TypeScript', 'Product Builder'],
-    mainImage: '/projects/La_Bonne_Occaz_Accueil.png',
-    gallery: ['/projects/La_Bonne_Occaz_Accueil.png'],
+    tags: ['No-code', 'Application métier', 'Dashboard', 'Facturation', 'Gestion cabinet'],
+    mainImage: '/images/projects/cabinetflow-cover.png',
+    gallery: ['/images/projects/cabinetflow-cover.png', '/projects/CabinetFlow.png', '/projects/CabinetFlow_Formulaire_Facture.png'],
     associatedTechnologies: ['bubble', 'claude-code', 'react', 'typescript'],
   },
   {
     id: 'orientix',
     slug: 'orientix',
     title: 'Orientix',
-    type: "Application mobile d'orientation scolaire",
-    status: 'Prototype avancé',
+    type: "Mobile · Orientation",
+    status: 'Application en test',
     shortDescription:
-      "Application mobile destinée à aider les lycéens à construire progressivement leur projet d'orientation grâce à un parcours clair, visuel et motivant.",
+      "Application mobile d'orientation pour aider les jeunes à explorer des métiers, découvrir des formations et construire progressivement leur projet.",
     description:
       "Orientix est une application mobile pensée pour accompagner les lycéens dans la construction de leur projet d'orientation. L'application propose une progression par étapes afin d'aider l'utilisateur à explorer les métiers, découvrir les formations, créer des chemins d'orientation et choisir progressivement un projet cohérent.\n\nLe design a été pensé pour un public lycéen : visuel, moderne, rassurant et légèrement ludique. L'objectif est de rendre l'orientation moins anxiogène en transformant un sujet complexe en parcours guidé. Chaque étape est présentée sous forme de carte avec un statut de progression, afin que l'utilisateur sache où il en est et ce qu'il peut faire ensuite.\n\nCe projet illustre une réflexion produit complète : définition du parcours utilisateur, logique de progression, gamification légère, exploration de données métiers/formations et adaptation de l'expérience à un public jeune.",
     problem:
@@ -120,9 +87,9 @@ export const projects: Project[] = [
     stack: ['Bubble Mobile Native', 'Bubble', 'Claude Code', 'UX mobile', 'Prototypage visuel', 'Structuration de données métiers/formations'],
     role:
       "J'ai imaginé le concept produit, défini les grandes étapes du parcours utilisateur, travaillé la logique de progression, conçu les écrans clés et structuré l'expérience pour rendre l'orientation plus accessible, interactive et motivante.",
-    tags: ['EdTech', 'Orientation', 'Mobile App', 'UX', 'Gamification', 'Bubble', 'Product Builder'],
-    mainImage: '/projects/Orientix_Accueil.png',
-    gallery: ['/projects/Orientix_Accueil.png', '/projects/Orientix_Taches.png'],
+    tags: ['Mobile app', 'Orientation', 'UX', 'Matching', 'Prototype'],
+    mainImage: '/images/projects/orientix-cover.png',
+    gallery: ['/images/projects/orientix-cover.png', '/projects/Orientix_Accueil.png', '/projects/Orientix_Taches.png'],
     associatedTechnologies: ['bubble', 'bubble-mobile-native', 'claude-code'],
   },
   {
@@ -216,5 +183,69 @@ export const projects: Project[] = [
     ],
     technicalImage: '/projects/webinaire-make/scenario-01.png',
     associatedTechnologies: ['make'],
+  },
+  {
+    id: 'maison-elise',
+    slug: 'maison-elise',
+    title: 'Maison Élise',
+    type: 'No-code · Application métier',
+    status: 'Projet portfolio',
+    shortDescription:
+      "Prototype tout-en-un pour salon de coiffure : site vitrine, réservation en ligne, agenda équipe, statistiques et assistant conseil.",
+    description:
+      "Maison Élise est un prototype d'application métier conçu pour un salon de coiffure indépendant. Il regroupe dans une seule interface un site vitrine, un système de réservation en ligne, un agenda d'équipe, des statistiques de suivi et un assistant conseil personnalisé.\n\nL'objectif est de montrer comment un outil digital peut centraliser tous les besoins d'un salon : attirer de nouveaux clients en ligne, gérer les rendez-vous sans friction, suivre les performances et accompagner les clientes dans leurs choix beauté.\n\nCe projet illustre ma capacité à concevoir des outils métier complets pour des professionnels indépendants qui souhaitent se digitaliser sans complexité.",
+    problem:
+      "Les salons de coiffure indépendants jonglent souvent entre plusieurs outils : agenda papier ou basique, absence de réservation en ligne, peu de visibilité sur leur activité et aucun accompagnement personnalisé pour leurs clientes.",
+    solution:
+      "Créer un prototype centralisé qui regroupe site vitrine, réservation en ligne, agenda équipe, statistiques et assistant conseil dans une interface simple et professionnelle, accessible depuis n'importe quel appareil.",
+    features: [
+      "Site vitrine du salon",
+      "Réservation en ligne pour les clientes",
+      "Agenda de l'équipe",
+      "Tableau de bord avec statistiques",
+      "Assistant conseil personnalisé",
+      "Interface mobile et desktop",
+      "Design élégant adapté à l'univers beauté",
+      "Gestion des prestations et tarifs",
+    ],
+    stack: ['No-code', 'Bubble', 'Claude Code', 'UI responsive', "Design d'outil métier"],
+    role:
+      "J'ai conçu l'ensemble du prototype : architecture de l'outil, parcours client, interfaces clés et logique fonctionnelle pour répondre aux besoins concrets d'un salon de coiffure indépendant.",
+    tags: ['Application métier', 'Site vitrine', 'Réservation', 'Dashboard', 'Prototype'],
+    mainImage: '/images/projects/maison-elise-cover.png',
+    gallery: ['/images/projects/maison-elise-cover.png'],
+    associatedTechnologies: ['bubble', 'claude-code'],
+  },
+  {
+    id: 'mon-histoire-magique',
+    slug: 'mon-histoire-magique',
+    title: 'Mon Histoire Magique',
+    type: 'IA générative · Enfants',
+    status: 'Prototype IA',
+    shortDescription:
+      "Application IA qui génère des histoires personnalisées pour enfants avec texte, illustration et version audio à partir d'un formulaire guidé.",
+    description:
+      "Mon Histoire Magique est une application IA qui permet à un parent ou à un enfant de créer une histoire personnalisée en quelques étapes simples. À partir d'un formulaire guidé — prénom de l'enfant, thème, personnages, décor et longueur souhaitée — l'application génère une histoire unique avec texte, illustration et narration audio.\n\nL'objectif est de rendre la création d'histoires magiques simple, rapide et accessible, en combinant la puissance de l'IA générative avec une expérience utilisateur pensée pour les familles.\n\nCe projet illustre comment l'IA peut enrichir une expérience quotidienne avec créativité, personnalisation et émotion, sans aucune complexité technique pour l'utilisateur final.",
+    problem:
+      "Les parents manquent souvent de temps pour inventer des histoires personnalisées pour leurs enfants. Les livres génériques ne correspondent pas toujours à la personnalité ou aux envies spécifiques de chaque enfant.",
+    solution:
+      "Créer une application guidée qui génère en quelques clics une histoire personnalisée avec texte, illustration et audio, à partir de paramètres simples renseignés par l'utilisateur.",
+    features: [
+      "Formulaire guidé de personnalisation",
+      "Génération de texte via IA (OpenAI)",
+      "Illustration générée par IA",
+      "Version audio de l'histoire",
+      "Interface simple et intuitive",
+      "Résultat téléchargeable ou partageable",
+      "Design coloré adapté aux enfants",
+      "Personnalisation du prénom, thème et personnages",
+    ],
+    stack: ['OpenAI', 'IA générative', 'No-code', 'Make', 'Claude Code'],
+    role:
+      "J'ai conçu le formulaire guidé, défini la logique de génération, structuré les prompts IA et prototypé l'expérience pour offrir une création d'histoires simple, personnalisée et magique.",
+    tags: ['OpenAI', 'IA générative', 'Audio', 'Illustration', 'No-code'],
+    mainImage: '/images/projects/histoire-magique-cover.png',
+    gallery: ['/images/projects/histoire-magique-cover.png'],
+    associatedTechnologies: ['claude-code', 'make'],
   },
 ];

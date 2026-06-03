@@ -26,14 +26,12 @@ export default function ProjectCard({ project, index = 0 }: Props) {
       whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
     >
       {/* Image */}
-      <div className="relative w-full h-48 overflow-hidden bg-slate-100">
+      <div className="relative w-full aspect-video overflow-hidden bg-slate-50">
         <img
           src={project.mainImage}
           alt={project.title}
-          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
         />
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
         {/* Status badge */}
         <div className="absolute top-3 left-3">
           <span className="text-xs font-semibold bg-white/92 backdrop-blur-sm text-slate-700 px-2.5 py-1 rounded-full border border-white/60 shadow-sm">

@@ -3,7 +3,7 @@ import { projects } from '@/data/projects';
 import ProjectCard from '@/components/ProjectCard';
 import MotionSection from '@/components/MotionSection';
 import Link from 'next/link';
-import { ArrowRight, Calendar, Layers } from 'lucide-react';
+import { ArrowRight, Calendar, Layers, Zap, Target, Cog, Compass } from 'lucide-react';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://stackpilot.fr';
 
@@ -55,12 +55,12 @@ export default function ProjetsPage() {
               <div>
                 <p className="section-tag mb-2">Votre projet</p>
                 <h2 className="text-2xl font-bold text-slate-900 mb-3">
-                  Un projet similaire en tête ?
+                  Un outil sur mesure à imaginer ?
                 </h2>
                 <p className="text-slate-500 leading-relaxed mb-6">
-                  J&apos;accompagne des entrepreneurs, freelances, associations et petites structures
-                  dans la création de leurs outils numériques — no-code, automatisation, CRM ou
-                  développement assisté par IA.
+                  J&apos;accompagne entrepreneurs, freelances, associations et petites structures dans la
+                  conception d&apos;outils numériques concrets : applications métier, CRM, automatisations,
+                  prototypes IA et interfaces personnalisées.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link
@@ -81,18 +81,21 @@ export default function ProjetsPage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { emoji: '⚡', value: '4 projets', label: 'prototypes livrés' },
-                  { emoji: '🎯', value: '100%', label: 'projets livrés' },
-                  { emoji: '🤖', value: 'Claude Code', label: 'outil principal' },
-                  { emoji: '📈', label: 'résultats mesurables', value: 'Toujours' },
+                  { icon: Zap, value: '6+', label: 'prototypes conçus', sub: 'pour explorer des cas d\'usage concrets' },
+                  { icon: Target, value: '100%', label: 'sur mesure', sub: 'des interfaces pensées selon le besoin métier' },
+                  { icon: Cog, value: 'No-code', label: 'automatisation & IA', sub: 'Bubble, Make, Airtable, OpenAI, CRM' },
+                  { icon: Compass, value: 'Vision', label: 'produit', sub: 'du besoin utilisateur au prototype testable' },
                 ].map((stat) => (
                   <div
                     key={stat.label}
                     className="bg-gradient-to-br from-indigo-50 to-violet-50 rounded-2xl p-4 border border-indigo-100 text-center"
                   >
-                    <div className="text-2xl mb-1">{stat.emoji}</div>
+                    <div className="flex justify-center mb-1">
+                      <stat.icon className="w-5 h-5 text-indigo-500" />
+                    </div>
                     <div className="text-xl font-bold text-slate-900">{stat.value}</div>
-                    <div className="text-xs text-slate-500">{stat.label}</div>
+                    <div className="text-xs font-semibold text-slate-700">{stat.label}</div>
+                    <div className="text-xs text-slate-400 mt-0.5">{stat.sub}</div>
                   </div>
                 ))}
               </div>

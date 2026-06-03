@@ -183,12 +183,6 @@ const RELATED_BUBBLE: RelatedProject[] = [
     slug: 'orientix',
   },
   {
-    title: 'La Bonne Occaz',
-    description: "Marketplace de petites annonces avec publication, recherche, favoris et gestion de compte.",
-    tags: ['Bubble', 'Marketplace', 'No-code'],
-    slug: 'la-bonne-occaz',
-  },
-  {
     title: 'CabinetFlow',
     description: "Outil métier de gestion de factures avec formulaire guidé et structure de données clients.",
     tags: ['Outil interne', 'Facturation', 'Formulaire'],
